@@ -45,10 +45,15 @@ export const Card = ({
 
   const pan = Gesture.Pan()
     .onUpdate((event) => {
+      // e.translationX es la distancia del swipe
+      // e.translationX es positivo si el swipe es hacia la derecha
+      // isSwipeRight es true si el swipe es hacia la derecha
       const isSwipingRight = event.translationX > 0;
+
+      // direction 1 es derecha, -1 es izquierda
       direction.value = isSwipingRight ? 1 : -1;
 
-      //Solo la primer tarjeta puede moverse
+      // Si el índice actual es el mismo que el índice de la tarjeta
       if (currentIndex === index) {
         translateX.value = event.translationX;
         animatedValue.value = interpolate(
@@ -60,19 +65,30 @@ export const Card = ({
     })
     .onEnd((event) => {
       if (currentIndex === index) {
+        // Si la distancia del swipe es mayor a 150 o la velocidad del swipe es mayor a 1000
+        // ir a la siguiente tarjeta
         if (
-          Math.abs(event.translationX) > 150 ||
+          Math.abs(event.translationX) > 80 ||
           Math.abs(event.translationX) > 1000
         ) {
-          //Mover tarjeta
-          translateX.value = withSpring(width * direction.value, {}, () => {
-            //Se actualiza el index
-            runOnJS(setCurrentIndex)(currentIndex + 1);
-            //Loop infinito
-            runOnJS(setNewData)([...newData, newData[currentIndex]]);
-          });
+          translateX.value = withSpring(
+            width * direction.value,
+            {
+              // Permite que la animación sea más rápida al momento de mover la siguiente tarjeta
+              duration: 300,
+            },
+            () => {
+              //Loop infinito
+              runOnJS(setNewData)([...newData, newData[currentIndex]]);
+              //Se actualiza el index
+              runOnJS(setCurrentIndex)(currentIndex + 1);
+            }
+          );
           //Animación al mover
           animatedValue.value = withSpring(currentIndex + 1);
+
+          // Si la distancia del swipe es menor a 150 o la velocidad del swipe es menor a 1000
+          // regresar a la posición original
         } else {
           translateX.value = withSpring(0, { duration: 500 });
           animatedValue.value = withSpring(currentIndex);
