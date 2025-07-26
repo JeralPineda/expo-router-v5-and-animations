@@ -1,7 +1,8 @@
+import { Activity } from "@/components/activity";
 import { Card } from "@/components/card";
 import { data } from "@/data/data";
 import { useState } from "react";
-import { StyleSheet, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { useSharedValue } from "react-native-reanimated";
 
 const MAX = 3;
@@ -37,6 +38,17 @@ export default function Home() {
           );
         })}
       </View>
+
+      <Text style={styles.text}>Recent Activity</Text>
+      <View style={styles.activityContainer}>
+        <ScrollView style={{ width: "100%" }}>
+          {newData[currentIndex].activity.map((item, index) => {
+            return (
+              <Activity key={`activity-${index}`} item={item} index={index} />
+            );
+          })}
+        </ScrollView>
+      </View>
     </View>
   );
 }
@@ -47,6 +59,16 @@ const styles = StyleSheet.create({
   },
   cardsContainer: {
     flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  text: {
+    fontSize: 32,
+    fontWeight: "bold",
+    paddingHorizontal: 16,
+  },
+  activityContainer: {
+    flex: 2 / 3,
     justifyContent: "center",
     alignItems: "center",
   },
