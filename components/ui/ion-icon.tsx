@@ -10,7 +10,8 @@ type SFSymbols6_0 =
   | "list"
   | "keypad-outline"
   | "backspace-outline"
-  | "trophy-outline";
+  | "trophy-outline"
+  | "accessibility-outline";
 
 const MAPPING: Record<
   SFSymbols6_0,
@@ -25,6 +26,7 @@ const MAPPING: Record<
   "keypad-outline": "keypad-outline",
   "backspace-outline": "backspace-outline",
   "trophy-outline": "trophy-outline",
+  "accessibility-outline": "accessibility-outline",
 };
 
 export type IonIconName = keyof typeof MAPPING;

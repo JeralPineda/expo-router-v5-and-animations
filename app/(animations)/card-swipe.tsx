@@ -1,6 +1,6 @@
 import { Activity } from "@/components/card-swipe/activity";
 import { Card } from "@/components/card-swipe/card";
-import { data } from "@/data/data";
+import { data } from "@/mock/data";
 import { useState } from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { useSharedValue } from "react-native-reanimated";

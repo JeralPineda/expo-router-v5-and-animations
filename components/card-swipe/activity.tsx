@@ -1,4 +1,4 @@
-import { ActivityType } from "@/data/data";
+import { ActivityType } from "@/mock/data";
 import { Image, StyleSheet, Text, View } from "react-native";
 
 interface ActivityProps {

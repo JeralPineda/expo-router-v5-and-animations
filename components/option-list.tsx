@@ -1,5 +1,5 @@
 import OptionItem from "@/components/option-item";
-import { navigationData } from "@/data/navigation";
+import { navigationData } from "@/mock/navigation";
 import { FlatList, StyleSheet } from "react-native";
 
 export default function OptionList() {

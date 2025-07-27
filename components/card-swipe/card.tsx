@@ -1,4 +1,4 @@
-import { DataType } from "@/data/data";
+import { DataType } from "@/mock/data";
 import {
   Image,
   StyleSheet,

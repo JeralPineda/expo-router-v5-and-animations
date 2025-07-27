@@ -37,4 +37,10 @@ export const navigationData: NavigationItem[] = [
     href: "/leaderboard",
     icon: "trophy-outline",
   },
+  {
+    id: 7,
+    name: "Availability",
+    href: "/availability",
+    icon: "accessibility-outline",
+  },
 ];
