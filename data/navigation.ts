@@ -25,4 +25,10 @@ export const navigationData: NavigationItem[] = [
     href: "/schedule-animation",
     icon: "list",
   },
+  {
+    id: 5,
+    name: "Pin Code",
+    href: "/pin-code",
+    icon: "keypad-outline",
+  },
 ];

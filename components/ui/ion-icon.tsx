@@ -7,7 +7,9 @@ type SFSymbols6_0 =
   | "options"
   | "swap-vertical"
   | "chevron-back"
-  | "list";
+  | "list"
+  | "keypad-outline"
+  | "backspace-outline";
 
 const MAPPING: Record<
   SFSymbols6_0,
@@ -19,6 +21,8 @@ const MAPPING: Record<
   "swap-vertical": "swap-vertical",
   "chevron-back": "chevron-back",
   list: "list",
+  "keypad-outline": "keypad-outline",
+  "backspace-outline": "backspace-outline",
 };
 
 export type IonIconName = keyof typeof MAPPING;

@@ -27,6 +27,10 @@ export default function AnimatedLayout() {
         name="schedule-animation"
         options={{ title: "Schedule Animation" }}
       />
+      <Stack.Screen
+        name="pin-code"
+        options={{ title: "Pin Code", headerShown: false }}
+      />
     </Stack>
   );
 }
