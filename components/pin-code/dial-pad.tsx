@@ -134,13 +134,13 @@ export const DialPadContainer = () => {
         ]}
       >
         {[...Array(pinLength).keys()].map((i) => {
-          const isSelected = !!code[i];
+          const isSelected = code[i] !== undefined;
+
           return (
             <MotiView
               key={`pin-${i}`}
               style={{
                 width: pinSize,
-                // height: isSelected ? pinSize : 2,
                 backgroundColor: "red",
                 borderRadius: pinSize,
               }}
@@ -148,18 +148,7 @@ export const DialPadContainer = () => {
                 type: "timing",
                 duration: 200,
               }}
-              // from={{ rotate: "0deg" }}
               animate={{
-                // rotate: [
-                //   "0deg",
-                //   "-10deg",
-                //   "10deg",
-                //   "-8deg",
-                //   "8deg",
-                //   "-4deg",
-                //   "4deg",
-                //   "0deg",
-                // ],
                 height: isSelected ? pinSize : 2,
                 marginBottom: isSelected ? pinSize / 2 : 0,
               }}
@@ -172,12 +161,9 @@ export const DialPadContainer = () => {
         onPress={(item) => {
           if (item === "del") {
             setCode((prevCode) => prevCode.slice(0, prevCode.length - 1));
-          } else if (typeof item === "number") {
-            if (code.length === pinLength) return;
+          } else if (typeof item === "number" && code.length < pinLength) {
             setCode((prevCode) => [...prevCode, item]);
           }
-
-          console.log("pressed", item);
         }}
       />
 
