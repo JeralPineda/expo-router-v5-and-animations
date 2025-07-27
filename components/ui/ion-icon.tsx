@@ -6,7 +6,8 @@ type SFSymbols6_0 =
   | "chevron-forward"
   | "options"
   | "swap-vertical"
-  | "chevron-back";
+  | "chevron-back"
+  | "list";
 
 const MAPPING: Record<
   SFSymbols6_0,
@@ -17,6 +18,7 @@ const MAPPING: Record<
   options: "options",
   "swap-vertical": "swap-vertical",
   "chevron-back": "chevron-back",
+  list: "list",
 };
 
 export type IonIconName = keyof typeof MAPPING;

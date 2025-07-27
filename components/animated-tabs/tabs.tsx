@@ -32,7 +32,7 @@ type IconProps = {
 
 function Icon({ name, ...rest }: IconProps & MotiProps) {
   // eslint-disable-next-line import/namespace
-  const LucideIcon = motifySvg(icons[name])();
+  const LucideIcon = motifySvg(icons[name] as any)();
 
   if (!LucideIcon) return null;
 

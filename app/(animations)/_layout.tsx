@@ -23,6 +23,10 @@ export default function AnimatedLayout() {
         options={{ title: "Animated Counter" }}
       />
       <Stack.Screen name="animated-tabs" options={{ title: "Animated Tabs" }} />
+      <Stack.Screen
+        name="schedule-animation"
+        options={{ title: "Schedule Animation" }}
+      />
     </Stack>
   );
 }

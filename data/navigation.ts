@@ -19,4 +19,10 @@ export const navigationData: NavigationItem[] = [
     href: "/animated-tabs",
     icon: "options",
   },
+  {
+    id: 4,
+    name: "Schedule Animation",
+    href: "/schedule-animation",
+    icon: "list",
+  },
 ];
