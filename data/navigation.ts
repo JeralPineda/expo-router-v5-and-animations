@@ -31,4 +31,10 @@ export const navigationData: NavigationItem[] = [
     href: "/pin-code",
     icon: "keypad-outline",
   },
+  {
+    id: 6,
+    name: "Leaderboard",
+    href: "/leaderboard",
+    icon: "trophy-outline",
+  },
 ];
