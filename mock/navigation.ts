@@ -43,4 +43,10 @@ export const navigationData: NavigationItem[] = [
     href: "/availability",
     icon: "accessibility-outline",
   },
+  {
+    id: 8,
+    name: "Circular Carousel",
+    href: "/circular-carousel",
+    icon: "albums-outline",
+  },
 ];

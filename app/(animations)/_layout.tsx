@@ -31,6 +31,10 @@ export default function AnimatedLayout() {
         name="pin-code"
         options={{ title: "Pin Code", headerShown: false }}
       />
+      <Stack.Screen
+        name="circular-carousel"
+        options={{ title: "Circular Carousel", headerShown: false }}
+      />
     </Stack>
   );
 }
