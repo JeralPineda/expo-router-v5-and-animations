@@ -35,6 +35,10 @@ export default function AnimatedLayout() {
         name="circular-carousel"
         options={{ title: "Circular Carousel", headerShown: false }}
       />
+      <Stack.Screen
+        name="apple-invites"
+        options={{ title: "Apple Invitation", headerShown: false }}
+      />
     </Stack>
   );
 }

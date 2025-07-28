@@ -49,4 +49,10 @@ export const navigationData: NavigationItem[] = [
     href: "/circular-carousel",
     icon: "albums-outline",
   },
+  {
+    id: 9,
+    name: "Apple Invitation",
+    href: "/apple-invites",
+    icon: "balloon-outline",
+  },
 ];
